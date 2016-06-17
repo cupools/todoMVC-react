@@ -3,7 +3,7 @@
 import React from 'react';
 
 // Create react components with jsx
-export default class Hello extends React.Component {
+class Hello extends React.Component {
     constructor() {
         super();
         this.state = {};
