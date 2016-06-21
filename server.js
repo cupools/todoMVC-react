@@ -9,7 +9,10 @@ new WebpackDevServer(webpack(config), {
     hot: true,
     historyApiFallback: true,
     stats: {
-        colors: true
+        colors: true,
+        noInfo: true,
+        quiet: true,
+        chunks: false
     }
 }).listen(3000, '127.0.0.1', function(err, result) {
     if (err) {
