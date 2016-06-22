@@ -1,6 +1,7 @@
 'use strict';
 
-let data = [{
+let data = [
+{
     key: Math.random(),
     desc: 'sleep',
     time: '2015-02-01',
@@ -17,8 +18,4 @@ let data = [{
     done: false
 }];
 
-export default {
-    getAll() {
-        return data;
-    }
-};
+export {data};

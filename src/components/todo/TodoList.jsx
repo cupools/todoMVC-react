@@ -4,16 +4,11 @@ import React from 'react';
 import TodoItem from './TodoItem';
 
 class TodoList extends React.Component {
-    constructor() {
-        super();
-    }
-
     render() {
-        let list = this.props.list;
-        let done = this.props.done;
+        let {list} = this.props;
 
         return (
-            <div>{list.map(t => t.done === done ? t.desc : 1)}</div>
+            <div class="ant-row">{list.map(t => <TodoItem item={t} key={t.key}/>)}</div>
         );
     }
 }

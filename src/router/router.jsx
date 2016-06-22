@@ -1,9 +1,9 @@
 'use strict';
 
-import React from 'react';
-import {Router, Route, browserHistory, withRouter} from 'react-router';
-import TodoPage from '../todo/TodoPage.jsx';
-import AddPage from '../add/AddPage.jsx';
+import {React} from 'react';
+import {Route, withRouter} from 'react-router';
+import TodoPage from '../components/todo/TodoPage.jsx';
+import AddPage from '../components/add/AddPage.jsx';
 
 const routes = (
     <Route path="/">
@@ -13,14 +13,4 @@ const routes = (
     </Route>
 );
 
-class Root extends React.Component {
-    render() {
-        return (
-            <Router history={browserHistory}>
-                {routes}
-            </Router>
-        );
-    }
-}
-
-export default Root;
+export default routes;

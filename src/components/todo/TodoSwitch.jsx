@@ -4,13 +4,10 @@ import React from 'react';
 import {Form, Switch} from 'antd';
 
 class TodoSwitch extends React.Component {
-    constructor() {
-        super();
-    }
-
     render() {
+        let {handleSwitch} = this.props;
         return (
-            <Switch onChange={this.props.handleSwitch}/>
+            <Switch onChange={handleSwitch} defaultChecked={true}/>
         );
     }
 }

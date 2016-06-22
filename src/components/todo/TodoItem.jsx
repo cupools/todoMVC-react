@@ -3,13 +3,6 @@
 import React from 'react';
 
 class TodoItem extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            done: true
-        };
-    }
-
     render() {
         let item = this.props.item;
 
