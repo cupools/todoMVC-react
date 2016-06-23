@@ -26,9 +26,7 @@ function list(state = data, action) {
     }
 }
 
-let todoApp = combineReducers({
+export default {
     list,
     filter: visiableFilter
-});
-
-export default todoApp;
+};
