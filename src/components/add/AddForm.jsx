@@ -14,7 +14,8 @@ class AddForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        console.log(this.props.form.getFieldsValue());
+        let desc = this.props.form.getFieldsValue().desc;
+        this.props.handleAdd(desc);
     }
 
     render() {

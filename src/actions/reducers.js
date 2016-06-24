@@ -2,24 +2,23 @@
 
 import { combineReducers } from 'redux';
 import * as actions from './actions';
-import {data} from './storage';
 
 function visiableFilter(state = actions.VisiableFilters.SHOW_TODO, action) {
-    let filter  = action.filter ?  'SHOW_TODO' : 'SHOW_DONE';
     switch (action.type) {
         case actions.SET_FILTER:
-            return filter;
+            return action.filter ? 'SHOW_TODO' : 'SHOW_DONE';
         default:
             return state;
     }
 }
 
-function list(state = data, action) {
+function list(state = [], action) {
     switch (action.type) {
         case actions.ADD_TODO:
-            return [{
+            return [...state, {
                 key: Math.random(),
-                time: new Date().toLocaleDateString()
+                desc: action.desc,
+                time: action.time
             }];
         default:
             return state;

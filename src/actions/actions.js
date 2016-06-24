@@ -12,7 +12,9 @@ export const VisiableFilters = {
 export function addTodo(desc) {
     return {
         type: ADD_TODO,
-        desc
+        desc,
+        time: new Date().toLocaleDateString(),
+        key: Math.random()
     };
 }
 

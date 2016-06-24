@@ -10,8 +10,10 @@ import 'antd/dist/antd.css';
 class App extends React.Component {
     render() {
         let {dispatch, list, filter} = this.props;
-        let handleSwitch = e => dispatch(actions.setFilter(e));
-        let childProps = {dispatch, list, filter, handleSwitch};
+        let handleSwitch = stat => dispatch(actions.setFilter(stat));
+        let handleAdd = desc => dispatch(actions.addTodo(desc));
+
+        let childProps = {dispatch, list, filter, handleSwitch, handleAdd};
 
         return (
             <div>
