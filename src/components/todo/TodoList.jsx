@@ -1,14 +1,37 @@
 'use strict';
 
 import React from 'react';
-import TodoItem from './TodoItem';
+
+import {Table, Icon} from 'antd';
+
+const columns = [
+    {
+        title: 'DESC',
+        dataIndex: 'desc',
+        key: 'desc'
+    }, {
+        title: 'Created Date',
+        dataIndex: 'time',
+        key: 'time'
+    }, {
+        title: 'Operation',
+        key: 'operation',
+        render: (text, record) => (
+            <span>
+                <a href="#">Finish</a>
+                <span className="ant-divider"></span>
+                <a href="#">Delete</a>
+            </span>
+        )
+    }
+];
 
 class TodoList extends React.Component {
     render() {
         let {list} = this.props;
 
         return (
-            <div class="ant-row">{list.map(t => <TodoItem item={t} key={t.key}/>)}</div>
+            <Table columns={columns} dataSource={list}></Table>
         );
     }
 }

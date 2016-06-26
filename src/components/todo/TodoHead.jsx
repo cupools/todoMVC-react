@@ -3,19 +3,24 @@
 import React from 'react';
 import TodoSwitch from './TodoSwitch';
 
+import {Menu, Icon} from 'antd';
+
 class TodoHead extends React.Component {
     render() {
         let {handleSwitch, done} = this.props;
 
         return (
-            <div className="ant-row">
-                <div className="ant-col-21">
-                    <h1>I'm header</h1>
-                </div>
-                <div className="ant-col-3">
-                    <TodoSwitch handleSwitch={handleSwitch}/>
-                </div>
-            </div>
+            <Menu onClick={e => e.key} selectedKeys={["todo"]} mode="horizontal">
+                <Menu.Item key="todo">
+                    <Icon type="tags" />Todo
+                </Menu.Item>
+                <Menu.Item key="done">
+                    <Icon type="check" />Done   // Switch
+                </Menu.Item>
+                <Menu.Item key="add" onClick={() => 1}>
+                    <Icon type="plus-circle-o" />Add    // Add Link
+                </Menu.Item>
+            </Menu>
         );
     }
 }
