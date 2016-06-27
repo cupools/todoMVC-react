@@ -1,16 +1,16 @@
 'use strict';
 
 import React from 'react';
-import {Link} from 'react-router';
+import {Menu, Icon} from 'antd';
 import AddForm from './AddForm';
+import AddHead from './AddHead';
 
 class AddPage extends React.Component {
     render() {
         return (
             <div>
-                <h1>I'm page header</h1>
-                <Link to="todo">Todo</Link>
-                <AddForm handleAdd={this.props.handleAdd}/>
+                <AddHead />
+                <AddForm handleAdd={this.props.handleAdd} handleTodoLink={this.props.handleTodoLink}/>
             </div>
         );
     }

@@ -2,6 +2,7 @@
 
 export const ADD_TODO = 'ADD_TODO';
 export const FINISH_TODO = 'FINISH_TODO';
+export const DELETE_TODO = 'DELETE_TODO';
 export const SET_FILTER = 'SET_FILTER';
 
 export const VisiableFilters = {
@@ -9,18 +10,26 @@ export const VisiableFilters = {
     SHOW_TODO: 'SHOW_TODO'
 };
 
-export function addTodo(desc) {
+export function addTodo({desc, time}) {
     return {
         type: ADD_TODO,
-        desc,
-        time: new Date().toLocaleDateString(),
-        key: Math.random()
+        payload: {
+            desc,
+            time: time.toLocaleDateString()
+        }
     };
 }
 
 export function finishTodo(index) {
     return {
         type: FINISH_TODO,
+        index
+    };
+}
+
+export function deleteTodo(index) {
+    return {
+        type: DELETE_TODO,
         index
     };
 }

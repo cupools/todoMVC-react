@@ -17,10 +17,14 @@ import * as actions from './actions/actions';
 let updateStorage = store => next => action => {
     switch(action.type) {
         case actions.ADD_TODO:
-            storage.add(action.desc);
+            action.payload.id = storage.add(action.payload);
             break;
         case actions.FINISH_TODO:
             storage.finish(action.index);
+            break;
+        case actions.DELETE_TODO:
+            storage.delete(action.index);
+            break;
     }
     let result = next(action);
     return result;
@@ -33,7 +37,7 @@ let store = wrapStoreWithMiddleware(combineReducers({
         routing: routerReducer
     }), {
         list: storage.get(),
-        filter: 'SHOW_TODO',
+        filter: actions.VisiableFilters.SHOW_TODO,
         routing: ''
     }
 );
