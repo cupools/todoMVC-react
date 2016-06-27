@@ -11,7 +11,7 @@ let identify = 0,
             return ret ? ret[0] : null;
         },
         add({ desc, time }) {
-            let id = ++identify;
+            let id = identify++;
             this.list.push({
                 id,
                 desc,
@@ -43,7 +43,7 @@ let identify = 0,
 
 function createIdentify(list) {
     return list.map(item => {
-        item.id = ++identify;
+        item.id = identify++;
         return item;
     });
 }

@@ -1,9 +1,8 @@
 'use strict';
 
 import React from 'react';
-import {Route} from 'react-router';
 import {connect} from 'react-redux';
-import * as actions from '../actions/actions';
+import * as actions from '../redux/actions';
 
 import 'antd/dist/antd.css';
 
@@ -12,15 +11,17 @@ class App extends React.Component {
     render() {
         let {dispatch, list, filter} = this.props;
 
-        let handleSwitch = stat => dispatch(actions.setFilter(stat));
-        let handleAdd = desc => dispatch(actions.addTodo(desc));
-        let handleFinish = index => dispatch(actions.finishTodo(index));
-        let handleDelete = index => dispatch(actions.deleteTodo(index));
+        let childProps = {
+            list,
+            filter,
+            handleSwitch: stat => dispatch(actions.setFilter(stat)),
+            handleAdd: desc => dispatch(actions.addTodo(desc)),
+            handleFinish: index => dispatch(actions.finishTodo(index)),
+            handleDelete: index => dispatch(actions.deleteTodo(index)),
 
-        let handleTodoLink = () => this.context.router.push('/todo');
-        let handleAddLink = () => this.context.router.push('/add');
-
-        let childProps = {dispatch, list, filter, handleSwitch, handleAdd, handleFinish, handleDelete, handleTodoLink, handleAddLink};
+            handleTodoLink: () => this.context.router.push('/todo'),
+            handleAddLink: () => this.context.router.push('/add')
+        };
 
         return (
             <div>

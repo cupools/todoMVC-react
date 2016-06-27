@@ -1,5 +1,6 @@
 # react-demo
-A easy demo included [react](https://github.com/facebook/react), [webpack](https://webpack.github.io/), [react-hot-reload](https://github.com/gaearon/react-hot-loader) and [babel](https://github.com/babel/babel)
+A easy demo included [react](https://github.com/facebook/react), [react-redux](https://github.com/reactjs/react-redux), [react-router](https://github.com/reactjs/react-router),
+[react-router-redux](https://github.com/reactjs/react-router-redux),  [react-hot-reload](https://github.com/gaearon/react-hot-loader).
 
 ## Get Started
 
@@ -8,4 +9,4 @@ $ npm i
 $ npm run start
 ```
 
-And then can visit [http://127.0.0.1:3000](http://127.0.0.1:3000) to enjoy react.
+Visit [http://127.0.0.1:3000](http://127.0.0.1:3000) and enjoy React.

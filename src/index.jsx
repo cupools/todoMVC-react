@@ -4,15 +4,15 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import {createStore, combineReducers, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
-import {Router, Route, browserHistory} from 'react-router';
+import {Router, Route, browserHistory, IndexRedirect} from 'react-router';
 import {syncHistoryWithStore, routerReducer} from 'react-router-redux';
 
 import App from './containers/App';
 import TodoPage from './components/todo/TodoPage';
 import AddPage from './components/add/AddPage';
-import reducers from './actions/reducers';
-import storage from './actions/storage';
-import * as actions from './actions/actions';
+import reducers from './redux/reducers';
+import storage from './redux/storage';
+import * as actions from './redux/actions';
 
 let updateStorage = store => next => action => {
     switch(action.type) {
@@ -42,14 +42,15 @@ let store = wrapStoreWithMiddleware(combineReducers({
     }
 );
 
-let history = syncHistoryWithStore(browserHistory, store);
+let syncHistory = syncHistoryWithStore(browserHistory, store);
 
 ReactDom.render(
     <Provider store={store}>
-        <Router history={history}>
+        <Router history={syncHistory}>
             <Route path="/" component={App} >
                 <Route path="todo" component={TodoPage} />
                 <Route path="add" component={AddPage} />
+                <IndexRedirect to="todo" />
             </Route>
         </Router>
     </Provider>,

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import {Menu, Icon} from 'antd';
-import * as actions from '../../actions/actions';
+import * as actions from '../../redux/actions';
 
 class TodoHead extends React.Component {
     constructor() {
