@@ -15,11 +15,10 @@ class App extends React.Component {
         let childProps = {
             list,
             filter,
+            actions,
             handleSwitch: stat => actions.setFilter(stat),
-            handleAdd: desc => actions.addTodo(desc),
             handleFinish: index => actions.finishTodo(index),
             handleDelete: index => actions.deleteTodo(index),
-
             handleTodoLink: () => this.context.router.push('/todo'),
             handleAddLink: () => this.context.router.push('/add')
         };

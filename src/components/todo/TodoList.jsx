@@ -34,11 +34,11 @@ const columns = [
 
 class TodoList extends React.Component {
     render() {
-        let {list, handleFinish, handleDelete, filter} = this.props;
+        let {list, actions, filter} = this.props;
 
         list.map(item => {
-            item.handleFinish = handleFinish;
-            item.handleDelete = handleDelete;
+            item.handleFinish = index => actions.finishTodo(index);
+            item.handleDelete = index => actions.deleteTodo(index);
             item.filter = filter;
         });
 
