@@ -2,7 +2,7 @@
 
 import React from 'react';
 import {Menu, Icon} from 'antd';
-import * as actions from '../../redux/actions';
+import {SHOW_DONE, SHOW_TODO} from '../../constants/FilterTypes';
 
 class TodoHead extends React.Component {
     constructor() {
@@ -23,7 +23,7 @@ class TodoHead extends React.Component {
 
     render() {
         let {filter} = this.props;
-        let selectedKey = (filter === actions.VisiableFilters.SHOW_TODO ? 'todo' : 'done');
+        let selectedKey = (filter === SHOW_TODO ? 'todo' : 'done');
 
         return (
             <Menu selectedKeys={[selectedKey]} mode="horizontal" onSelect={this.handleSelect} style={{marginBottom: 20}}>

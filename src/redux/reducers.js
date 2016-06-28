@@ -1,28 +1,29 @@
 'use strict';
 
 import { combineReducers } from 'redux';
-import * as actions from './actions';
+import { ADD_TODO, FINISH_TODO, DELETE_TODO, SET_FILTER } from '../constants/ActionTypes';
+import { SHOW_DONE, SHOW_TODO } from '../constants/FilterTypes';
 
 function list(state = [], action) {
     switch (action.type) {
-        case actions.ADD_TODO:
+        case ADD_TODO:
             return [...state, Object.assign({}, action.payload, { done: false })];
-        case actions.FINISH_TODO:
+        case FINISH_TODO:
             return [...state].map(item => {
                 item.id === action.index && (item.done = true);
                 return item;
             });
-        case actions.DELETE_TODO:
+        case DELETE_TODO:
             return [...state].filter(item => item.id !== action.index);
         default:
             return state;
     }
 }
 
-function visiableFilter(state = actions.VisiableFilters.SHOW_TODO, action) {
+function visiableFilter(state = SHOW_TODO, action) {
     switch (action.type) {
-        case actions.SET_FILTER:
-            return action.filter ? actions.VisiableFilters.SHOW_TODO : actions.VisiableFilters.SHOW_DONE;
+        case SET_FILTER:
+            return action.filter ? SHOW_TODO : SHOW_DONE;
         default:
             return state;
     }

@@ -2,22 +2,23 @@
 
 import React from 'react';
 import {connect} from 'react-redux';
-import * as actions from '../redux/actions';
+import {bindActionCreators} from 'redux';
+import * as actionCreators from '../redux/actionCreators';
+import selector from '../redux/selector';
 
 import 'antd/dist/antd.css';
 
 class App extends React.Component {
 
     render() {
-        let {dispatch, list, filter} = this.props;
-
+        let {list, filter, actions} = this.props;
         let childProps = {
             list,
             filter,
-            handleSwitch: stat => dispatch(actions.setFilter(stat)),
-            handleAdd: desc => dispatch(actions.addTodo(desc)),
-            handleFinish: index => dispatch(actions.finishTodo(index)),
-            handleDelete: index => dispatch(actions.deleteTodo(index)),
+            handleSwitch: stat => actions.setFilter(stat),
+            handleAdd: desc => actions.addTodo(desc),
+            handleFinish: index => actions.finishTodo(index),
+            handleDelete: index => actions.deleteTodo(index),
 
             handleTodoLink: () => this.context.router.push('/todo'),
             handleAddLink: () => this.context.router.push('/add')
@@ -36,22 +37,8 @@ App.contextTypes = {
     router: React.PropTypes.object.isRequired
 };
 
-function filterTodos(list, filter) {
-    switch (filter) {
-        case actions.VisiableFilters.SHOW_TODO:
-            return list.filter(i => !i.done);
-        case actions.VisiableFilters.SHOW_DONE:
-            return list.filter(i => i.done);
-        default:
-            return list.filter(i => !i.done);
-    }
-}
-
-function select(state) {
+export default connect(selector, function mapDispatchToProps(dispatch) {
     return {
-        list: filterTodos(state.list, state.filter),
-        filter: state.filter
+        actions: bindActionCreators(actionCreators, dispatch)
     };
-}
-
-export default connect(select)(App);
+})(App);

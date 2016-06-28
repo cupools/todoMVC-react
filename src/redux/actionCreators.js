@@ -1,16 +1,9 @@
 'use strict';
 
-export const ADD_TODO = 'ADD_TODO';
-export const FINISH_TODO = 'FINISH_TODO';
-export const DELETE_TODO = 'DELETE_TODO';
-export const SET_FILTER = 'SET_FILTER';
+import { ADD_TODO, FINISH_TODO, DELETE_TODO, SET_FILTER } from '../constants/ActionTypes';
+import { SHOW_DONE, SHOW_TODO } from '../constants/FilterTypes';
 
-export const VisiableFilters = {
-    SHOW_DONE: 'SHOW_DONE',
-    SHOW_TODO: 'SHOW_TODO'
-};
-
-export function addTodo({desc, time}) {
+export function addTodo({ desc, time }) {
     return {
         type: ADD_TODO,
         payload: {
