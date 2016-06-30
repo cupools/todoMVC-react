@@ -20,7 +20,7 @@
   },
 
   "rules": {
-    "strict": [1, "function"],
+    "strict": [0, "function"],
     "accessor-pairs": 2,
     "arrow-spacing": [0, { "before": true, "after": true }],
     "block-spacing": [2, "always"],
@@ -124,7 +124,7 @@
     "semi": [2, "always"],
     "semi-spacing": [2, { "before": false, "after": true }],
     "space-before-blocks": [2, "always"],
-    "space-before-function-paren": [2, "always"],
+    "space-before-function-paren": [2, "never"],
     "space-in-parens": [2, "never"],
     "space-infix-ops": 2,
     "space-unary-ops": [2, { "words": true, "nonwords": false }],

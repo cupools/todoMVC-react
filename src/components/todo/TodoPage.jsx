@@ -1,4 +1,3 @@
-'use strict';
 
 import React from 'react';
 import TodoHead from './TodoHead';
@@ -8,10 +7,10 @@ class TodoPage extends React.Component {
     render() {
         return (
             <div>
-                <TodoHead {...this.props} />
-                <TodoList {...this.props} />
+                <TodoHead {...this.props}/>
+                <TodoList {...this.props}/>
             </div>
-        );
+            );
     }
 }
 

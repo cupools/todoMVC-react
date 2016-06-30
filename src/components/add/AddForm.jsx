@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import {Form, Input, Button, DatePicker} from 'antd';
+import { Form, Input, Button, DatePicker } from 'antd';
 
 const FormItem = Form.Item;
 
@@ -18,7 +18,7 @@ class AddForm extends React.Component {
         e.preventDefault();
 
         this.props.form.validateFields((errors, values) => {
-            if(errors) {
+            if (errors) {
 
             } else {
                 let payload = this.props.form.getFieldsValue();
@@ -67,19 +67,12 @@ class AddForm extends React.Component {
                 <FormItem {...formItemLayout} label="Date" required>
                     <DatePicker locale={locale} {...timeProps}/>
                 </FormItem>
-                <FormItem wrapperCol={{
-                    span: 16,
-                    offset: 6
-                }} style={{
-                    marginTop: 24
-                }}>
+                <FormItem wrapperCol={{ span: 16, offset: 6 }} style={{ marginTop: 24 }}>
                     <Button type="primary" htmlType="submit">Confirm</Button>
-                    <Button type="ghost" onClick={() => this.props.handleTodoLink()} style={{
-                        'marginLeft': '15px'
-                    }}>Back</Button>
+                    <Button type="ghost" onClick={() => this.props.handleTodoLink()} style={{ marginLeft: 15 }}>Back</Button>
                 </FormItem>
             </Form>
-        );
+            );
     }
 }
 

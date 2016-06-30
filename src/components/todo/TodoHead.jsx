@@ -1,8 +1,8 @@
 'use strict';
 
 import React from 'react';
-import {Menu, Icon} from 'antd';
-import {SHOW_DONE, SHOW_TODO} from '../../constants/FilterTypes';
+import { Menu, Icon } from 'antd';
+import { SHOW_TODO } from '../../constants/FilterTypes';
 
 class TodoHead extends React.Component {
     constructor() {
@@ -11,7 +11,7 @@ class TodoHead extends React.Component {
     }
 
     handleSelect(item) {
-        switch(item.key) {
+        switch (item.key) {
             case 'todo':
                 return this.props.handleSwitch(true);
             case 'done':
@@ -26,18 +26,18 @@ class TodoHead extends React.Component {
         let selectedKey = (filter === SHOW_TODO ? 'todo' : 'done');
 
         return (
-            <Menu selectedKeys={[selectedKey]} mode="horizontal" onSelect={this.handleSelect} style={{marginBottom: 20}}>
+            <Menu selectedKeys={[selectedKey]} mode="horizontal" onSelect={this.handleSelect} style={{ marginBottom: 20 }}>
                 <Menu.Item key="todo">
-                    <Icon type="tags"/>Todo
+                    <Icon type="tags" />Todo
                 </Menu.Item>
                 <Menu.Item key="done">
-                    <Icon type="check"/>Done
+                    <Icon type="check" />Done
                 </Menu.Item>
                 <Menu.Item key="add" onClick={() => 1}>
-                    <Icon type="plus-circle-o"/>Add
+                    <Icon type="plus-circle-o" />Add
                 </Menu.Item>
             </Menu>
-        );
+            );
     }
 }
 

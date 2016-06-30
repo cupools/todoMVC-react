@@ -2,9 +2,9 @@
 
 import React from 'react';
 import ReactDom from 'react-dom';
-import {Provider} from 'react-redux';
-import {Router, Route, browserHistory, IndexRedirect} from 'react-router';
-import {syncHistoryWithStore} from 'react-router-redux';
+import { Provider } from 'react-redux';
+import { Router, Route, browserHistory, IndexRedirect } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
 import store from './redux/store';
 
 import App from './containers/App';
@@ -16,7 +16,7 @@ let syncHistory = syncHistoryWithStore(browserHistory, store);
 ReactDom.render(
     <Provider store={store}>
         <Router history={syncHistory}>
-            <Route path="/" component={App} >
+            <Route path="/" component={App}>
                 <Route path="todo" component={TodoPage} />
                 <Route path="add" component={AddPage} />
                 <IndexRedirect to="todo" />

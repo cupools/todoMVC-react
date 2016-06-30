@@ -42,9 +42,7 @@ class TodoList extends React.Component {
             item.filter = filter;
         });
 
-        return (
-            <Table columns={columns} dataSource={list} rowKey={i => i.id} />
-        );
+        return (<Table columns={columns} dataSource={list} rowKey={i => i.id}/>);
     }
 }
 

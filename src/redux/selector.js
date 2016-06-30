@@ -1,6 +1,6 @@
 'use strict';
 
-import {SHOW_DONE, SHOW_TODO} from '../constants/FilterTypes';
+import { SHOW_DONE, SHOW_TODO } from '../constants/FilterTypes';
 
 function filterTodos(list, filter) {
     switch (filter) {

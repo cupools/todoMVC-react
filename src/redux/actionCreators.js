@@ -1,9 +1,8 @@
 'use strict';
 
 import { ADD_TODO, FINISH_TODO, DELETE_TODO, SET_FILTER } from '../constants/ActionTypes';
-import { SHOW_DONE, SHOW_TODO } from '../constants/FilterTypes';
 
-export function addTodo({ desc, time }) {
+export function addTodo({desc, time}) {
     return {
         type: ADD_TODO,
         payload: {
