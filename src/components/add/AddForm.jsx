@@ -58,18 +58,17 @@ class AddForm extends React.Component {
                 placeholder: 'Please select time'
             }
         };
-
         return (
             <Form horizontal onSubmit={this.handleSubmit}>
-                <FormItem {...formItemLayout} label="Desc" required>
-                    <Input placeholder="Please input desc" {...descProps}/>
+                <FormItem {...formItemLayout} label='Desc' required>
+                    <Input placeholder='Please input desc' {...descProps}/>
                 </FormItem>
-                <FormItem {...formItemLayout} label="Date" required>
+                <FormItem {...formItemLayout} label='Date' required>
                     <DatePicker locale={locale} {...timeProps}/>
                 </FormItem>
                 <FormItem wrapperCol={{ span: 16, offset: 6 }} style={{ marginTop: 24 }}>
-                    <Button type="primary" htmlType="submit">Confirm</Button>
-                    <Button type="ghost" onClick={() => this.props.handleTodoLink()} style={{ marginLeft: 15 }}>Back</Button>
+                    <Button type='primary' htmlType='submit'>Confirm</Button>
+                    <Button type='ghost' onClick={() => this.props.handleTodoLink()} style={{ marginLeft: 15 }}>Back</Button>
                 </FormItem>
             </Form>
             );

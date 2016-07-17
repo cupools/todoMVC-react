@@ -1,14 +1,12 @@
 'use strict';
 
 import React from 'react';
-import { Icon } from 'antd';
 import AddForm from './AddForm';
 import AddHead from './AddHead';
 
 class AddPage extends React.Component {
     render() {
         const handleAdd = payload => this.props.actions.addTodo(payload);
-
         return (
             <div>
                 <AddHead/>
