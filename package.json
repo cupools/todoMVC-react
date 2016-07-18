@@ -1,11 +1,11 @@
 {
-  "name": "react-demo",
+  "name": "todoMVC-react",
   "version": "1.0.0",
-  "description": "react demo",
+  "description": "Todo list with React and Ant Design",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "server": "node server.js"
   },
   "author": "cupools",
   "license": "MIT",
