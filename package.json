@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node build/server.js",
-    "build": "webpack --config build/webpack.prod.js"
+    "build": "webpack --config build/webpack.prod.js --progress --colors"
   },
   "author": "cupools",
   "license": "MIT",
