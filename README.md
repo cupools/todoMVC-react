@@ -6,7 +6,7 @@ An easy demo with [react](https://github.com/facebook/react), [react-redux](http
 
 ```bash
 $ npm i
-$ npm run server
+$ npm run dev
 ```
 
 open [http://127.0.0.1:3000/](http://127.0.0.1:3000/)
