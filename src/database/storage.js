@@ -1,8 +1,18 @@
 'use strict';
 
+const empty = JSON.stringify([{
+    desc: 'sleep early',
+    time: '2016/9/1',
+    done: false
+}, {
+    desc: 'barbecue',
+    time: '2016/9/2',
+    done: false
+}]);
+
 let identify = 0;
 let storage = {
-    list: JSON.parse(window.localStorage.getItem('todo') || '[]'),
+    list: JSON.parse(window.localStorage.getItem('todo') || empty),
     get() {
         return createIdentify(this.list);
     },

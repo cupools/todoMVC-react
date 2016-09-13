@@ -9,4 +9,4 @@ $ npm i
 $ npm run dev
 ```
 
-open [http://127.0.0.1:3000/](http://127.0.0.1:3000/)
+open [http://127.0.0.1:3000/](http://127.0.0.1:3000/) or [Demo here](https://cupools.github.io/todoMVC-react/)

@@ -3,7 +3,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, Redirect, Route, browserHistory, IndexRedirect } from 'react-router';
+import { Router, Route, IndexRedirect, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import store from './redux/store';
 
@@ -21,7 +21,6 @@ ReactDom.render(
                 <Route path="add" component={AddPage} />
                 <IndexRedirect to="todo" />
             </Route>
-            <Redirect from="/todoMVC-react/" to="/"></Redirect>
         </Router>
     </Provider>,
     document.getElementById('container')
